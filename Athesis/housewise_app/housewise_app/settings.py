@@ -109,7 +109,7 @@ WSGI_APPLICATION = 'housewise_app.wsgi.application'
 
 # Database configuration using dj_database_url
 DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL', 'postgres://localhost:5432/mydb'))
+    'default': dj_database_url.config(default='postgresql://postgres:oihGDUtfPLmtMWAZWHTyWHkkMLuvhntE@postgres.railway.internal:5432/railway')
 }
 
 # Password validation settings
@@ -139,6 +139,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = 'static/'
+
+# Define STATIC_ROOT for the collectstatic command
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Media files (uploads)
 MEDIA_URL = '/media/'
